@@ -1,0 +1,27 @@
+body{
+    padding: 100px;
+}
+.submit{
+    margin-top: 60px;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px;
+    padding: 50px;
+}
+#aho-vatija{
+    display: none;
+}
+.status{
+    margin-left: 10px;
+    padding: 50px;
+    color: #fff;
+    border-radius: 10px;
+}
+.deposit{
+    background-color: salmon;
+}
+.withdraw{
+    background-color: sandybrown;
+}
+.Balance{
+    background-color: tomato;
+}

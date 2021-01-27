@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+       <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+   
+
+    <div id="wrapper">
+        <h1 class="text-center">Welcome To Our Pioner Bank</h1>
+        <div class="submit">
+            <h3>Login</h3>
+            <input type="email" placeholder="Enter email" class="form-control"><br>
+            <input type="password" placeholder="Enter Password" class="form-control"><br>
+             <button id='batton'type="button" class="btn btn-success">Enter</button>
+        </div>
+    </div>
+        <div id="aho-vatija">
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="deposit status">
+                      <h5>Deposite</h5>
+                      <h2>$<span id="depostadd">00</span></h2>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="withdraw status">
+                      <h5>Withdraw</h5>
+                      <h2>$<span id="withdrawAmount">00<span/></h2>
+                  </div>
+                </div>
+                <div class="col-md-4">
+              <div class="Balance status">
+                <h5>Balance</h5>
+                <h2>$<span id="balance">1250</span></h2>
+              </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+
+                <div class="submit">
+                  <h2>Deposit</h2>
+                  <input id='depositeAmount' type="text" placeholder="$ You want to deposite" class="form-control"><br>
+                  <button id='addbtn' type="button" class="btn btn-success">Deposit</button>
+                </div>
+
+              </div>
+              <div class="col-md">
+                <div class="submit">
+                  <h2>withdraw</h2>
+                  <input id="withdraw"type="text" placeholder="$ You want to withdraw" class="form-control"><br>
+                  <button id="addWithdraw"type="button" class="btn btn-success">Withdraw</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+     <script>
+       var loginBtn= document.getElementById("batton");
+       loginBtn.addEventListener("click",function(){
+         
+         var hideDiv=document.getElementById("wrapper");
+           hideDiv.style.display="none";
+           var unHide=document.getElementById("aho-vatija");
+           unHide.style.display="block"
+       })
+          
+   
+
+      // Amount area
+      var addbtn=document.getElementById('addbtn');
+      addbtn.addEventListener("click", function(){
+    
+        var depositeAmount = document.getElementById("depositeAmount").value;
+         var Amount=parseFloat(depositeAmount);
+
+         var depostadd= document.getElementById("depostadd").innerText;
+         var textAmount=parseFloat(depostadd);
+         var total=Amount+textAmount;
+         document.getElementById("depostadd").innerText= total;
+         document.getElementById("depositeAmount").value="";
+
+
+
+         var balance =document.getElementById("balance").innerText;
+         var balance=parseFloat(balance);
+
+         var TotalBalance=total+balance;
+         document.getElementById("balance").innerText= TotalBalance;
+      })
+       
+        var addWithdraw=document.getElementById("addWithdraw");
+        addWithdraw.addEventListener("click",function(){
+               var withdraw=document.getElementById("withdraw").value;
+               var withdraw=parseFloat(withdraw);
+               var withdrawAmount=document.getElementById("withdrawAmount").innerText;
+               var withdrawAmount=parseFloat(withdrawAmount);
+               var withdrawTotal=withdraw+withdrawAmount;
+               
+               document.getElementById("withdrawAmount").innerText=withdrawTotal;
+               document.getElementById("withdraw").value="";
+
+
+              var balance=document.getElementById("balance").innerText;
+              var balance=parseFloat(balance);
+              var currenTotal=balance-withdrawTotal;
+              document.getElementById("balance").innerText=currenTotal;
+
+
+        })
+
+
+
+     </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+</html>
